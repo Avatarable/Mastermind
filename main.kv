@@ -1,0 +1,410 @@
+#: import MDTextField kivymd.uix.textfield.MDTextField
+#: import MDTextFieldRound kivymd.uix.textfield.MDTextFieldRound
+#: import MDFillRoundFlatButton kivymd.uix.button.MDFillRoundFlatButton
+#: import MDIcon kivymd.uix.label.MDIcon
+#: import NavigationLayout kivymd.uix.navigationdrawer.NavigationLayout
+
+WindowManager:
+
+<Logo@MDIcon>
+    size_hint: None, None
+    pos_hint: {"center_x": .5, "center_y": .5}
+    canvas:
+        Color:
+            rgba: (1, 1, 1, 1) if self.source else (0, 0, 0, 0.4)
+        RoundedRectangle:
+            source: self.source if self.source else None
+            pos: self.pos
+            size: self.size
+            radius: 100, 100, 100, 100
+    halign: "center"
+    icon: "brain"
+    theme_text_color: "Custom"
+    text_color: 1, 1, 1, 1
+
+<LoginPage>:
+    name: "Login"
+    BoxLayout:
+        size_hint: .5, .5
+        pos_hint: {"center_x": 0.5, "center_y":0.6}
+        spacing: dp(40)
+        orientation: 'vertical'
+
+        Logo:
+            size: (200,200)
+            font_size: 100
+
+        MDFillRoundFlatButton:
+            id: signin_normal_btn
+            text: "Normal"
+            theme_text_color: 'Custom'
+            md_bg_color: app.theme_cls.primary_color
+            size_hint: 1, None
+            on_release: app.root.current = "Signup"
+
+        MDFillRoundFlatButton:
+            id: signin_super_btn
+            text: "Super"
+            theme_text_color: 'Custom'
+            md_bg_color: app.theme_cls.primary_color
+            size_hint: 1, None
+            on_release: app.root.current = "SuperSignup"
+
+
+
+<SignupPage>
+    size_hint: .8, .1
+    pos_hint: {"center_x": 0.5, "center_y":0.5}
+    spacing: dp(20)
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint: .8, .8
+        pos_hint: {"center_x": 0.5, "center_y":0.5}
+        spacing: dp(20)
+        orientation: 'vertical'
+        MDTextField:
+            id: nickname
+            hint_text: "Enter your nickname"
+            helper_text: "*required"
+            helper_text_mode: "on_focus" # "persistent"
+            required: True
+
+
+        MDFillRoundFlatButton:
+            id: signup_btn
+            text: "Play"
+            theme_text_color: 'Custom'
+            text_color: 1,1,1,1
+            size_hint: 1, 0
+            on_release: root.login()
+
+<SuperSignupPage>
+    size_hint: .8, .1
+    pos_hint: {"center_x": 0.5, "center_y":0.5}
+    spacing: dp(20)
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint: .8, .8
+        pos_hint: {"center_x": 0.5, "center_y":0.5}
+        spacing: dp(20)
+        orientation: 'vertical'
+        MDTextField:
+            id: nickname
+            hint_text: "Enter your nickname"
+            helper_text: "*required"
+            helper_text_mode: "on_focus" # "persistent"
+            required: True
+
+
+        MDFillRoundFlatButton:
+            id: signup_btn
+            text: "Play"
+            theme_text_color: 'Custom'
+            text_color: 1,1,1,1
+            size_hint: 1, 0
+            on_release: root.login()
+
+
+<Content>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+
+    MDTextField:
+        hint_text: "Title"
+
+
+<RoundedButton@MDFillRoundFlatButton>:
+    size_hint: None, None
+    background_color:0,0,0,0    #makes background invisible
+
+
+<ProposedColors>
+    cols: 4
+    size_hint: 1, .1
+    spacing: dp(5)
+
+    RoundedButton:
+        id: color1
+        size: (60, 60)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+    RoundedButton:
+        id: color2
+        size: (60, 60)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+    RoundedButton:
+        id: color3
+        size: (60, 60)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+    RoundedButton:
+        id: color4
+        size: (60, 60)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+
+
+<SuperProposedColors>
+    cols: 5
+    size_hint: 1, .1
+    spacing: dp(5)
+
+    RoundedButton:
+        id: color1
+        size: (50, 50)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+    RoundedButton:
+        id: color2
+        size: (50, 50)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+    RoundedButton:
+        id: color3
+        size: (50, 50)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+    RoundedButton:
+        id: color4
+        size: (50, 50)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+
+    RoundedButton:
+        id: color5
+        size: (50, 50)
+        canvas.before:
+            Color:
+                rgba: (.6,.6,.8,1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [50,]
+
+
+
+<NormalScreen>
+    name: 'GameScreen'
+    MDToolbar:
+        id: list_toolbar
+        title: root.user
+        font_size: '5sp'
+        pos_hint: {'top': 1}
+        elevation: 10
+        height: 40
+        right_action_items: [["logout", lambda x: root.logout(x)]]
+
+    GridLayout:
+        size_hint: .9, .9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        cols: 2
+
+        BoxLayout:
+            size_hint: .7, .9
+            pos_hint: {"center_x": 0.5, "center_y":0.5}
+            spacing: dp(20)
+            padding: 0, 0, 0, 0
+            orientation: 'vertical'
+
+            ScrollView:
+                MDList:
+                    id: list_content
+                    spacing: dp(62)
+
+            GridLayout:
+                size_hint: 1, .1
+                pos_hint: {"center_x": 0.5, "center_y":1}
+                cols:4
+
+                Spinner:
+                    id: color_spin1
+                    text: 'Blue'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey'
+                    on_text: root.add_color(0, self.text)
+
+                Spinner:
+                    id: color_spin2
+                    text: 'Red'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey'
+                    on_text: root.add_color(1, self.text)
+
+                Spinner:
+                    id: color_spin3
+                    text: 'Yellow'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey'
+                    on_text: root.add_color(2, self.text)
+
+                Spinner:
+                    id: color_spin4
+                    text: 'Green'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey'
+                    on_text: root.add_color(3, self.text)
+
+
+        BoxLayout:
+            size_hint: .3, .7
+            pos_hint: {"center_x": 0.5, "center_y":0.5}
+            spacing: dp(20)
+            padding: dp(20), 0, 0, dp(5)
+            orientation: 'vertical'
+
+            ScrollView:
+                MDList:
+                    id: check_list
+                    spacing: dp(62)
+
+            MDRectangleFlatIconButton:
+                id: add_btn
+                text: "Check"
+                icon: 'brain'
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                spacing: 0, 0, dp(10), dp(10)
+                size_hint: 1, .1
+                on_release: root.add_item()
+
+
+
+<SuperScreen>
+    name: 'SuperGameScreen'
+    MDToolbar:
+        id: list_toolbar
+        title: root.user
+        pos_hint: {'top': 1}
+        elevation: 10
+        height: 40
+        right_action_items: [["logout", lambda x: root.logout(x)]]
+
+    GridLayout:
+        size_hint: .9, .9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        cols: 2
+
+        BoxLayout:
+            size_hint: .7, .9
+            pos_hint: {"center_x": 0.5, "center_y":0.5}
+            spacing: dp(20)
+            padding: 0, 0, 0, 0
+            orientation: 'vertical'
+
+            ScrollView:
+                MDList:
+                    id: list_content
+                    spacing: dp(52)
+
+            GridLayout:
+                size_hint: 1, .1
+                pos_hint: {"center_x": 0.5, "center_y":1}
+                cols:5
+
+                Spinner:
+                    id: color_spin1
+                    text: 'Blue'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey', 'Purple', 'Brown'
+                    on_text: root.add_color(0, self.text)
+
+                Spinner:
+                    id: color_spin2
+                    text: 'Red'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey', 'Purple', 'Brown'
+                    on_text: root.add_color(1, self.text)
+
+                Spinner:
+                    id: color_spin3
+                    text: 'Yellow'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey', 'Purple', 'Brown'
+                    on_text: root.add_color(2, self.text)
+
+                Spinner:
+                    id: color_spin4
+                    text: 'Green'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey', 'Purple', 'Brown'
+                    on_text: root.add_color(3, self.text)
+
+                Spinner:
+                    id: color_spin5
+                    text: 'Grey'
+                    values: 'Blue', 'Red', 'Yellow', 'Pink', 'Green', 'Grey', 'Purple', 'Brown'
+                    on_text: root.add_color(4, self.text)
+
+
+        BoxLayout:
+            size_hint: .3, .7
+            pos_hint: {"center_x": 0.5, "center_y":0.5}
+            spacing: dp(20)
+            padding: dp(20), 0, 0, dp(5)
+            orientation: 'vertical'
+
+            ScrollView:
+                MDList:
+                    id: check_list
+                    spacing: dp(52)
+
+            MDRectangleFlatIconButton:
+                id: add_btn
+                text: "Check"
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                spacing: 0, 0, dp(10), dp(10)
+                size_hint: 1, .1
+                on_release: root.add_item()
+
+
+
+
+<WindowManager>:
+    id: screen_manager
+    LoginPage
+    Screen:
+        name: "Signup"
+        SignupPage
+    Screen:
+        name: "SuperSignup"
+        SuperSignupPage
+    NormalScreen
+    SuperScreen
